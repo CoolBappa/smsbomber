@@ -6,33 +6,33 @@ fi
 clear
 
 banner() {
-  printf '*** SMS BOMBER ***'
+  echo -e '\e[93m SMS BOMBER'
 }
 
 kp() {
-  printf "\e[95m Setting Up Server\n"
-  printf "\n"
-  printf "\e[92m[\e[91m1\e[92m]\e[93m SERVER 1\e[93m\n"
-  printf "\e[92m[\e[91m2\e[92m]\e[93m SERVER 2\e[93m\n"
-  printf "\e[92mSelect Option\e[0m: \e[92m"
+  echo -e "\e[95m Setting Up Server"
+  echo ""
+  echo -e "\e[92m[\e[91m1\e[92m]\e[93m SERVER 1\e[93m"
+  echo -e "\e[92m[\e[91m2\e[92m]\e[93m SERVER 2\e[93m"
+  echo -ne "\e[92mSelect Option\e[0m: \e[92m"
   read ch
   if [ $ch -eq 1 ]; then
     sp
   elif [ $ch -eq 2 ]; then
     sp1
   else
-    printf "\e[92mWrong Option Mere Bhai\n"
+    echo -e "\e[92mWrong Option Mere Bhai"
   fi
 }
 
 sp() {
   clear
   banner
-  printf "Start up Server\n"
+  echo -e "Start up Server"
   sleep 2.0
-  printf "\e[95m bombing on number :-$num\n"
+  echo -e "\e[95m Bombing Number:$num"
   sleep 2.0
-  printf "\e[91m bombing start\n"
+  echo -e "\e[91m Bombing has started..."
   cp api1.sh app1.sh
   sed -i s/€tor/$num/g app1.sh
   bash app1.sh
@@ -42,11 +42,11 @@ sp() {
 sp1() {
   clear
   banner
-  printf "Start up Server\n"
+  echo -e "Start up Server"
   sleep 2.0
-  printf "\e[95m bombing on number :-$num\n"
+  echo -e "\e[95m Bombing Number:-$num"
   sleep 2.0
-  printf "\e[91m bombing start\n"
+  echo -e "\e[91m Bombing has started..."
   cp api.sh app.sh
   sed -i s/€tor/$num/g app.sh
   bash app.sh
@@ -54,7 +54,7 @@ sp1() {
 }
 
 banner
-printf "\e[91m Enter Mobile:"
+echo -ne "\e[91m Enter Number:"
 sleep 5.0
 
 bomb() {
@@ -64,21 +64,21 @@ bomb() {
   if [ "$method" == "true" ]; then
     kp
     method="false"
-    printf "\n"
+    echo ""
   else
     sp1
-    printf "\n"
+    echo
   fi
   con
 }
 
 con() {
-  printf "\n"
-  printf "\e[31m# \e[93m BOMBER\e[93m \e[92m(\e[31m$v\e[92m)\n"
-  printf "\e[92m[\e[91m1\e[92m]\e[93m RE-BOMB\e[93m\n"
-  printf "\e[92m[\e[91m2\e[92m]\e[93m EXIT\e[93m\n"
-  printf "\e[92m[\e[91m3\e[92m]\e[93m ARE BHAI BAS KAR PHONE MAAR JAYEGA USKA\e[93m\n"
-  printf "Select:"
+  echo -e " "
+  echo -e "\e[31m# \e[93m BOMBER\e[93m \e[92m(\e[31m$v\e[92m)"
+  echo -e "\e[92m[\e[91m1\e[92m]\e[93m RE-BOMB\e[93m"
+  echo -e "\e[92m[\e[91m2\e[92m]\e[93m EXIT\e[93m"
+  echo -e "\e[92m[\e[91m3\e[92m]\e[93m ARE BHAI BAS KAR PHONE MAAR JAYEGA USKA\e[93m"
+  echo -ne "Select:"
 
   read opt
   if [ $opt -eq 1 ]; then  
@@ -87,9 +87,9 @@ con() {
   elif [ $opt -eq 2 ]; then
     clear
   elif [ $opt -eq 3 ]; then
-    printf "\e[91m wrong input\n"
+    echo  -ne "\e[91m wrong input"
   else 
-    printf "\n"
+    echo  ""
   fi
 }
 
