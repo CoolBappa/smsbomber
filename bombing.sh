@@ -1,6 +1,3 @@
-git clone "https://github.com/officialkeshav/access-key"
-rm -rf access-key
-
 if [ -f "setup.sh" ]; then
   bash setup.sh
   rm setup.sh
